@@ -54,7 +54,7 @@ countries = ['IN', 'US', 'KP']
 
 
 def clean_up():
-    dont_remove = ['cookie_scraper.py', '.idea', '.git']
+    dont_remove = ['cookie_scraper.py', '.idea', '.git','requirements.txt']
     for f in os.listdir(os.getcwd()):
         if f not in dont_remove:
             print('Removing Dir {}'.format(f))
