@@ -53,10 +53,9 @@ headers = {
 countries = ['IN', 'US', 'KP']
 
 
-def clean_up():
-    dont_remove = ['cookie_scraper.py', '.idea', '.git','requirements.txt']
+def clean_up(ccs):
     for f in os.listdir(os.getcwd()):
-        if f not in dont_remove:
+        if f in ccs:
             print('Removing Dir {}'.format(f))
             shutil.rmtree(os.path.join(os.getcwd(), f))
 
@@ -111,7 +110,7 @@ def animate():
 
 
 if __name__ == '__main__':
-    clean_up()
+    clean_up(countries)
     create_dirs(countries)
     t = threading.Thread(target=animate)
     t.start()
